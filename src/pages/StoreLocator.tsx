@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Loader } from '@googlemaps/js-api-loader';
 
 const locations = [
@@ -9,14 +9,20 @@ const locations = [
     city: 'Bremerton',
     state: 'WA',
     zip: '98310',
-    phone: '(360) 377-2117',
+    phone: '(360) 555-0101',
     hours: {
-      monFri: '8:00 AM - 8:00 PM',
-      sat: '8:00 AM - 8:00 PM',
-      sun: '8:00 AM - 7:00 PM'
+      monFri: '10:00 AM - 8:00 PM',
+      sat: '10:00 AM - 8:00 PM',
+      sun: '11:00 AM - 6:00 PM'
     },
     mapUrl: 'https://www.google.com/maps/place/3579+Wheaton+Way,+Bremerton,+WA+98310',
-    coordinates: { lat: 47.591576, lng: -122.620787 }
+    coordinates: { lat: 47.591576, lng: -122.620787 },
+    images: [
+      'https://i.imgur.com/go50RhH.png',
+      'https://i.imgur.com/YA8dRbR.png',
+      'https://i.imgur.com/hw5NLh2.png',
+      'https://i.imgur.com/Xcpbf8g.png'
+    ]
   },
   {
     id: 2,
@@ -24,14 +30,19 @@ const locations = [
     city: 'Silverdale',
     state: 'WA',
     zip: '98383',
-    phone: '(360) 517-2099',
+    phone: '(360) 555-0102',
     hours: {
-      monFri: '9:00 AM - 9:00 PM',
-      sat: '9:00 AM - 9:00 PM',
-      sun: '9:00 AM - 9:00 PM'
+      monFri: '10:00 AM - 8:00 PM',
+      sat: '10:00 AM - 8:00 PM',
+      sun: '11:00 AM - 6:00 PM'
     },
     mapUrl: 'https://www.google.com/maps/place/9505+Silverdale+Way+NW,+Silverdale,+WA+98383',
-    coordinates: { lat: 47.656276, lng: -122.686544 }
+    coordinates: { lat: 47.656276, lng: -122.686544 },
+    images: [
+      'https://i.imgur.com/2aSoRwf.png',
+      'https://i.imgur.com/IiqUiwi.png',
+      'https://i.imgur.com/Gyz6XPA.png'
+    ]
   },
   {
     id: 3,
@@ -39,16 +50,75 @@ const locations = [
     city: 'Belfair',
     state: 'WA',
     zip: '98528',
-    phone: '(360) 275-4604',
+    phone: '(360) 555-0103',
     hours: {
-      monFri: '9:00 AM - 9:00 PM',
-      sat: '9:00 AM - 9:00 PM',
-      sun: '9:00 AM - 9:00 PM'
+      monFri: '10:00 AM - 8:00 PM',
+      sat: '10:00 AM - 8:00 PM',
+      sun: '11:00 AM - 6:00 PM'
     },
     mapUrl: 'https://www.google.com/maps/place/24090+WA-3,+Belfair,+WA+98528',
-    coordinates: { lat: 47.451382, lng: -122.826431 }
+    coordinates: { lat: 47.451382, lng: -122.826431 },
+    images: [
+      'https://i.imgur.com/KeLkXQ7.png',
+      'https://i.imgur.com/0A2Tlvi.png',
+      'https://i.imgur.com/pvqPRaA.png',
+      'https://i.imgur.com/qgWb6wk.png'
+    ]
   }
 ];
+
+const ImageGallery = ({ images }: { images: string[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const previousImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="relative">
+      <div className="aspect-video relative overflow-hidden rounded-lg">
+        <img
+          src={images[currentIndex]}
+          alt={`Store view ${currentIndex + 1}`}
+          className="w-full h-full object-cover"
+        />
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={previousImage}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </>
+        )}
+      </div>
+      {images.length > 1 && (
+        <div className="flex justify-center mt-2 gap-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentIndex ? 'bg-purple-600' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const StoreLocator = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -66,7 +136,6 @@ const StoreLocator = () => {
         const google = await loader.load();
         
         if (mapRef.current) {
-          // Calculate center point of all locations
           const bounds = new google.maps.LatLngBounds();
           locations.forEach(location => {
             bounds.extend(location.coordinates);
@@ -87,7 +156,6 @@ const StoreLocator = () => {
           googleMapRef.current = map;
           map.fitBounds(bounds);
 
-          // Add markers for each location
           locations.forEach(location => {
             const marker = new google.maps.Marker({
               position: location.coordinates,
@@ -133,7 +201,6 @@ const StoreLocator = () => {
     initMap();
 
     return () => {
-      // Cleanup markers
       markersRef.current.forEach(marker => marker.setMap(null));
       markersRef.current = [];
     };
@@ -148,14 +215,15 @@ const StoreLocator = () => {
         </p>
       </div>
 
-      {/* Map Container */}
       <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
         <div ref={mapRef} className="w-full h-[400px]" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {locations.map((location) => (
           <div key={location.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <ImageGallery images={location.images} />
+            
             <div className="p-6">
               <div className="flex items-start space-x-3 mb-4">
                 <MapPin className="h-6 w-6 text-purple-600 flex-shrink-0 mt-1" />
