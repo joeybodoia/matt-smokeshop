@@ -12,7 +12,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <Smoking className="h-8 w-8 text-purple-500" />
-              <span className="text-xl font-bold">Smoke Haven</span>
+              <span className="text-xl font-bold">Smoke 'N Go</span>
             </Link>
           </div>
           
@@ -20,6 +20,7 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link to="/" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</Link>
               <Link to="/products" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Products</Link>
+              <Link to="/locations" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Locations</Link>
               <Link to="/about" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</Link>
               <Link to="/contact" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
             </div>
@@ -55,6 +56,13 @@ const Navbar = () => {
               Products
             </Link>
             <Link
+              to="/locations"
+              className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Locations
+            </Link>
+            <Link
               to="/about"
               className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsOpen(false)}
@@ -75,4 +83,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar
