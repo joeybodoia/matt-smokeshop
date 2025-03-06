@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Loader } from '@googlemaps/js-api-loader';
 
-const locations = [
+const locations = [ 
   {
     id: 1,
     address: '3579 Wheaton Wy',
@@ -13,8 +13,8 @@ const locations = [
     hours: {
       monFri: '8:00 AM - 8:00 PM',
       sat: '8:00 AM - 8:00 PM',
-      sun: '9:00 AM - 7:00 PM'
-    },
+      sun: '9:00 AM - 7:00 PM' 
+    },  
     mapUrl: 'https://www.google.com/maps/place/3579+Wheaton+Way,+Bremerton,+WA+98310',
     coordinates: { lat: 47.591576, lng: -122.620787 },
     images: [
@@ -22,8 +22,8 @@ const locations = [
       'https://i.imgur.com/YA8dRbR.png',
       'https://i.imgur.com/hw5NLh2.png',
       'https://i.imgur.com/Xcpbf8g.png'
-    ]
-  },
+    ]   
+  },  
   {
     id: 2,
     address: '9505 Silverdale Way NW',
@@ -34,16 +34,16 @@ const locations = [
     hours: {
       monFri: '9:00 AM - 9:00 PM',
       sat: '9:00 AM - 9:00 PM',
-      sun: '9:00 AM - 9:00 PM'
-    },
+      sun: '9:00 AM - 9:00 PM' 
+    },  
     mapUrl: 'https://www.google.com/maps/place/9505+Silverdale+Way+NW,+Silverdale,+WA+98383',
     coordinates: { lat: 47.656276, lng: -122.686544 },
     images: [
       'https://i.imgur.com/2aSoRwf.png',
       'https://i.imgur.com/IiqUiwi.png',
       'https://i.imgur.com/Gyz6XPA.png'
-    ]
-  },
+    ]   
+  },  
   {
     id: 3,
     address: '24090 WA-3 STE #E',
@@ -54,8 +54,8 @@ const locations = [
     hours: {
       monFri: '9:00 AM - 9:00 PM',
       sat: '9:00 AM - 9:00 PM',
-      sun: '9:00 AM - 9:00 PM'
-    },
+      sun: '9:00 AM - 9:00 PM' 
+    },  
     mapUrl: 'https://www.google.com/maps/place/24090+WA-3,+Belfair,+WA+98528',
     coordinates: { lat: 47.451382, lng: -122.826431 },
     images: [
@@ -63,9 +63,11 @@ const locations = [
       'https://i.imgur.com/0A2Tlvi.png',
       'https://i.imgur.com/pvqPRaA.png',
       'https://i.imgur.com/qgWb6wk.png'
-    ]
+    ]   
   }
 ];
+
+
 
 const ImageGallery = ({ images }: { images: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,12 +81,12 @@ const ImageGallery = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <div className="relative">
-      <div className="aspect-video relative overflow-hidden rounded-lg">
+    <div className="relative bg-gray-100">
+      <div className="h-[300px] relative overflow-hidden">
         <img
           src={images[currentIndex]}
           alt={`Store view ${currentIndex + 1}`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
         {images.length > 1 && (
           <>
@@ -104,7 +106,7 @@ const ImageGallery = ({ images }: { images: string[] }) => {
         )}
       </div>
       {images.length > 1 && (
-        <div className="flex justify-center mt-2 gap-2">
+        <div className="flex justify-center mt-2 gap-2 pb-2">
           {images.map((_, index) => (
             <button
               key={index}
