@@ -9,11 +9,11 @@ const locations = [
     city: 'Bremerton',
     state: 'WA',
     zip: '98310',
-    phone: '(360) 555-0101',
+    phone: '(360) 377-2117',
     hours: {
-      monFri: '10:00 AM - 8:00 PM',
-      sat: '10:00 AM - 8:00 PM',
-      sun: '11:00 AM - 6:00 PM'
+      monFri: '8:00 AM - 8:00 PM',
+      sat: '8:00 AM - 8:00 PM',
+      sun: '9:00 AM - 7:00 PM'
     },
     mapUrl: 'https://www.google.com/maps/place/3579+Wheaton+Way,+Bremerton,+WA+98310',
     coordinates: { lat: 47.591576, lng: -122.620787 },
@@ -30,11 +30,11 @@ const locations = [
     city: 'Silverdale',
     state: 'WA',
     zip: '98383',
-    phone: '(360) 555-0102',
+    phone: '(360) 517-2099',
     hours: {
-      monFri: '10:00 AM - 8:00 PM',
-      sat: '10:00 AM - 8:00 PM',
-      sun: '11:00 AM - 6:00 PM'
+      monFri: '9:00 AM - 9:00 PM',
+      sat: '9:00 AM - 9:00 PM',
+      sun: '9:00 AM - 9:00 PM'
     },
     mapUrl: 'https://www.google.com/maps/place/9505+Silverdale+Way+NW,+Silverdale,+WA+98383',
     coordinates: { lat: 47.656276, lng: -122.686544 },
@@ -50,11 +50,11 @@ const locations = [
     city: 'Belfair',
     state: 'WA',
     zip: '98528',
-    phone: '(360) 555-0103',
+    phone: '(360) 275-4604',
     hours: {
-      monFri: '10:00 AM - 8:00 PM',
-      sat: '10:00 AM - 8:00 PM',
-      sun: '11:00 AM - 6:00 PM'
+      monFri: '9:00 AM - 9:00 PM',
+      sat: '9:00 AM - 9:00 PM',
+      sun: '9:00 AM - 9:00 PM'
     },
     mapUrl: 'https://www.google.com/maps/place/24090+WA-3,+Belfair,+WA+98528',
     coordinates: { lat: 47.451382, lng: -122.826431 },
