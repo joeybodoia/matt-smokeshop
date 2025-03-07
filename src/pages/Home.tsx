@@ -25,7 +25,7 @@ const Home = () => {
           setFeaturedProducts(data as Product[]);
         }
       } catch (err) {
-        console.error('Error fetching products:', err);
+        console.error('Error fetching featured products:', err);
       } finally {
         setLoading(false);
       }
@@ -56,7 +56,11 @@ const Home = () => {
       >
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="text-5xl font-bold mb-4">Welcome to Smoke 'N Go</h1>
+            <img 
+              src="https://i.imgur.com/r1zEbbG.png"
+              alt="Smoke & Go"
+              className="mx-auto mb-6 h-32 object-contain"
+            />
             <p className="text-xl mb-8">Your Premier Destination for Premium Smoking Accessories</p>
             <Link
               to="/products"

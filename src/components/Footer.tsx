@@ -7,7 +7,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Smoke Haven</h3>
+            <img 
+              src="https://i.imgur.com/r1zEbbG.png"
+              alt="Smoke & Go"
+              className="h-12 mb-4"
+            />
             <p className="text-gray-300">Your premier destination for premium smoking accessories and products.</p>
           </div>
           
@@ -24,7 +28,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-purple-500" />
-                <span>info@smokehaven.com</span>
+                <span>info@smokengo.com</span>
               </div>
             </div>
           </div>
@@ -46,7 +50,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p className="text-gray-300">© 2024 Smoke Haven. All rights reserved.</p>
+          <p className="text-gray-300">© 2024 Smoke 'N Go. All rights reserved.</p>
           <p className="text-gray-400 text-sm mt-2">Must be 21 or older to purchase. Please smoke responsibly.</p>
         </div>
       </div>
