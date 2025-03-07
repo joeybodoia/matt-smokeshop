@@ -24,6 +24,7 @@ const Navbar = () => {
               <Link to="/" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</Link>
               <Link to="/products" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Products</Link>
               <Link to="/locations" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Locations</Link>
+              <Link to="/employment" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Employment</Link>
               <Link to="/about" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</Link>
               <Link to="/contact" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
             </div>
@@ -64,6 +65,13 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Locations
+            </Link>
+            <Link
+              to="/employment"
+              className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Employment
             </Link>
             <Link
               to="/about"
