@@ -24,9 +24,13 @@ const Navbar = () => {
               <Link to="/" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</Link>
               <Link to="/products" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Products</Link>
               <Link to="/locations" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Locations</Link>
-              <Link to="/employment" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Employment</Link>
               <Link to="/rewards" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Rewards</Link>
-              <Link to="/contact" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
+              <Link 
+                to="/employment" 
+                className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition-colors"
+              >
+                Join Our Team
+              </Link>
               <a 
                 href="https://www.instagram.com/smokego_wa"
                 target="_blank"
@@ -75,13 +79,6 @@ const Navbar = () => {
               Locations
             </Link>
             <Link
-              to="/employment"
-              className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Employment
-            </Link>
-            <Link
               to="/rewards"
               className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsOpen(false)}
@@ -89,11 +86,11 @@ const Navbar = () => {
               Rewards
             </Link>
             <Link
-              to="/contact"
-              className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
+              to="/employment"
+              className="block bg-purple-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-purple-700 transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              Contact
+              Join Our Team
             </Link>
             <a
               href="https://www.instagram.com/smokego_wa"
