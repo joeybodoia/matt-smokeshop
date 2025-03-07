@@ -32,7 +32,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-purple-500">
+              <a 
+                href="https://www.instagram.com/smokengo_wa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-500"
+              >
                 <Instagram className="h-6 w-6" />
               </a>
             </div>

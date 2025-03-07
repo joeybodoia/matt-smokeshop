@@ -4,10 +4,10 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
-import About from './pages/About';
 import Contact from './pages/Contact';
 import StoreLocator from './pages/StoreLocator';
 import Employment from './pages/Employment';
+import Rewards from './pages/Rewards';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/rewards" element={<Rewards />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/locations" element={<StoreLocator />} />
             <Route path="/employment" element={<Employment />} />
@@ -30,4 +30,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
