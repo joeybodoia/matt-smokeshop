@@ -2,19 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Loader } from '@googlemaps/js-api-loader';
 
-const locations = [ 
+const locations = [
   {
     id: 1,
+    name: 'Smoke & Go Bremerton Location',
     address: '3579 Wheaton Wy',
     city: 'Bremerton',
     state: 'WA',
     zip: '98310',
-    phone: '(360) 377-2117',
+    phone: '360-377-2117',
     hours: {
       monFri: '8:00 AM - 8:00 PM',
       sat: '8:00 AM - 8:00 PM',
-      sun: '9:00 AM - 7:00 PM' 
-    },  
+      sun: '9:00 AM - 7:00 PM'
+    },
     mapUrl: 'https://www.google.com/maps/place/3579+Wheaton+Way,+Bremerton,+WA+98310',
     coordinates: { lat: 47.591576, lng: -122.620787 },
     images: [
@@ -22,40 +23,42 @@ const locations = [
       'https://i.imgur.com/YA8dRbR.png',
       'https://i.imgur.com/hw5NLh2.png',
       'https://i.imgur.com/Xcpbf8g.png'
-    ]   
-  },  
+    ]
+  },
   {
     id: 2,
+    name: 'Smoke & Go Silverdale Location',
     address: '9505 Silverdale Way NW',
     city: 'Silverdale',
     state: 'WA',
     zip: '98383',
-    phone: '(360) 517-2099',
+    phone: '360-517-2099',
     hours: {
       monFri: '9:00 AM - 9:00 PM',
       sat: '9:00 AM - 9:00 PM',
-      sun: '9:00 AM - 9:00 PM' 
-    },  
+      sun: '9:00 AM - 9:00 PM'
+    },
     mapUrl: 'https://www.google.com/maps/place/9505+Silverdale+Way+NW,+Silverdale,+WA+98383',
     coordinates: { lat: 47.656276, lng: -122.686544 },
     images: [
       'https://i.imgur.com/2aSoRwf.png',
       'https://i.imgur.com/IiqUiwi.png',
       'https://i.imgur.com/Gyz6XPA.png'
-    ]   
-  },  
+    ]
+  },
   {
     id: 3,
+    name: 'Smoke & Go Belfair Location',
     address: '24090 WA-3 STE #E',
     city: 'Belfair',
     state: 'WA',
     zip: '98528',
-    phone: '(360) 275-4604',
+    phone: '360-275-4604',
     hours: {
       monFri: '9:00 AM - 9:00 PM',
       sat: '9:00 AM - 9:00 PM',
-      sun: '9:00 AM - 9:00 PM' 
-    },  
+      sun: '9:00 AM - 9:00 PM'
+    },
     mapUrl: 'https://www.google.com/maps/place/24090+WA-3,+Belfair,+WA+98528',
     coordinates: { lat: 47.451382, lng: -122.826431 },
     images: [
@@ -63,11 +66,51 @@ const locations = [
       'https://i.imgur.com/0A2Tlvi.png',
       'https://i.imgur.com/pvqPRaA.png',
       'https://i.imgur.com/qgWb6wk.png'
-    ]   
+    ]
+  },
+  {
+    id: 4,
+    name: 'Tobacco Zone Bremerton Location',
+    address: '4201 WA-3',
+    city: 'Bremerton',
+    state: 'WA',
+    zip: '98312',
+    phone: '360-373-0437',
+    hours: {
+      monFri: '9:00 AM - 9:00 PM',
+      sat: '9:00 AM - 9:00 PM',
+      sun: '9:00 AM - 7:00 PM'
+    },
+    mapUrl: 'https://www.google.com/maps/place/4201+WA-3,+Bremerton,+WA+98312',
+    coordinates: { lat: 47.565144, lng: -122.686323 },
+    images: [
+      'https://i.imgur.com/KW3Dv6i.png',
+      'https://i.imgur.com/fC3fV6p.png',
+      'https://i.imgur.com/5Z4P8TN.png',
+      'https://i.imgur.com/Yzw5Z7q.png',
+      'https://i.imgur.com/KUyQ0gl.png'
+    ]
+  },
+  {
+    id: 5,
+    name: 'Smoke Town Port Orchard Location',
+    address: '3280 SE Lund Ave #4',
+    city: 'Port Orchard',
+    state: 'WA',
+    zip: '98366',
+    phone: '360-876-2532',
+    hours: {
+      monFri: '8:00 AM - 8:00 PM',
+      sat: '8:00 AM - 8:00 PM',
+      sun: '8:00 AM - 8:00 PM'
+    },
+    mapUrl: 'https://www.google.com/maps/place/3280+SE+Lund+Ave+%234,+Port+Orchard,+WA+98366',
+    coordinates: { lat: 47.516769, lng: -122.627983 },
+    images: [
+      'https://i.imgur.com/YA8dRbR.png'
+    ]
   }
 ];
-
-
 
 const ImageGallery = ({ images }: { images: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -162,7 +205,7 @@ const StoreLocator = () => {
             const marker = new google.maps.Marker({
               position: location.coordinates,
               map: map,
-              title: `${location.city} Location`,
+              title: location.name,
               icon: {
                 path: google.maps.SymbolPath.CIRCLE,
                 scale: 10,
@@ -176,7 +219,7 @@ const StoreLocator = () => {
             const infoWindow = new google.maps.InfoWindow({
               content: `
                 <div class="p-2">
-                  <h3 class="font-semibold">${location.city} Location</h3>
+                  <h3 class="font-semibold">${location.name}</h3>
                   <p>${location.address}</p>
                   <p>${location.city}, ${location.state} ${location.zip}</p>
                   <p class="mt-2">
@@ -230,7 +273,7 @@ const StoreLocator = () => {
               <div className="flex items-start space-x-3 mb-4">
                 <MapPin className="h-6 w-6 text-purple-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">{location.city} Location</h3>
+                  <h3 className="text-xl font-semibold mb-2">{location.name}</h3>
                   <p className="text-gray-600">
                     {location.address}<br />
                     {location.city}, {location.state} {location.zip}
