@@ -28,7 +28,7 @@ const Navbar = () => {
               <Link to="/rewards" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Rewards</Link>
               <Link to="/contact" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
               <a 
-                href="https://www.instagram.com/smokengo_wa"
+                href="https://www.instagram.com/smokego_wa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
@@ -96,7 +96,7 @@ const Navbar = () => {
               Contact
             </Link>
             <a
-              href="https://www.instagram.com/smokengo_wa"
+              href="https://www.instagram.com/smokego_wa"
               target="_blank"
               rel="noopener noreferrer"
               className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"

@@ -33,7 +33,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/smokengo_wa"
+                href="https://www.instagram.com/smokego_wa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-purple-500"
