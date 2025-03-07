@@ -49,7 +49,7 @@ const Home = () => {
       <div 
         className="relative h-[600px] bg-cover bg-center"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")',
+          backgroundImage: 'url("https://i.imgur.com/VNMBEeA.png")',
           backgroundBlendMode: 'overlay',
           backgroundColor: 'rgba(0, 0, 0, 0.5)'
         }}
@@ -66,32 +66,32 @@ const Home = () => {
               to="/products"
               className="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
             >
-              Shop Now
+              Explore Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Features Section */}
+      {/* Deals Section */}
       <div className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Deals</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
-              <Star className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Premium Quality</h3>
-              <p className="text-gray-600">Curated selection of top-tier products from trusted brands</p>
+              <div className="text-4xl font-bold text-purple-600 mb-4">15% OFF</div>
+              <h3 className="text-xl font-semibold mb-2">Zyn</h3>
+              <p className="text-gray-600">Limited time offer on all Zyn products</p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
-              <Shield className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Expert Guidance</h3>
-              <p className="text-gray-600">Knowledgeable staff to help you find the perfect products</p>
+              <div className="text-4xl font-bold text-purple-600 mb-4">BOGO</div>
+              <h3 className="text-xl font-semibold mb-2">Kratom</h3>
+              <p className="text-gray-600">Buy one get one FREE on all Kratom products</p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
-              <Clock className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Fast Service</h3>
-              <p className="text-gray-600">Quick processing and shipping of your orders</p>
+              <div className="text-4xl font-bold text-purple-600 mb-4">20% OFF</div>
+              <h3 className="text-xl font-semibold mb-2">Glass</h3>
+              <p className="text-gray-600">All glass products on sale</p>
             </div>
           </div>
         </div>
