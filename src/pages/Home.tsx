@@ -64,26 +64,35 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Deals Section */}
+      {/* Member Rewards Section */}
       <div className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Deals</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Member Rewards</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
-              <div className="text-4xl font-bold text-purple-600 mb-4">15% OFF</div>
-              <h3 className="text-xl font-semibold mb-2">Zyn</h3>
-              <p className="text-gray-600">Limited time offer on all Zyn products</p>
+              <h3 className="text-2xl font-semibold mb-2 text-purple-600">Free vape under $25</h3>
+              <div className="text-lg font-medium text-gray-700 mb-4">700 points</div>
+              <p className="text-gray-600">Redeem points for a free vape</p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
-              <div className="text-4xl font-bold text-purple-600 mb-4">BOGO</div>
-              <h3 className="text-xl font-semibold mb-2">Kratom</h3>
-              <p className="text-gray-600">Buy one get one FREE on all Kratom products</p>
+              <h3 className="text-2xl font-semibold mb-2 text-purple-600">20% off glass</h3>
+              <div className="text-lg font-medium text-gray-700 mb-4">250 points</div>
+              <p className="text-gray-600">Save on your favorite glass products</p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
-              <div className="text-4xl font-bold text-purple-600 mb-4">20% OFF</div>
-              <h3 className="text-xl font-semibold mb-2">Glass</h3>
-              <p className="text-gray-600">All glass products on sale</p>
+              <h3 className="text-2xl font-semibold mb-2 text-purple-600">10% off entire purchase</h3>
+              <div className="text-lg font-medium text-gray-700 mb-4">100 points</div>
+              <p className="text-gray-600">Excludes tobacco products</p>
             </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/rewards"
+              className="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
+            >
+              See all Member Rewards
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </div>
         </div>
       </div>
