@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Futura';
+    src: url('https://fonts.cdnfonts.com/css/futura-pt');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+body {
+  font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif;
+}
