@@ -7,4 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    // Force HTTPS in production
+    https: process.env.NODE_ENV === 'production',
+  },
 });
