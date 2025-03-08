@@ -15,4 +15,6 @@ export interface Brand {
   images: {
     logo: string;
   };
+  category: string[];
+  subcategory: string[];
 }

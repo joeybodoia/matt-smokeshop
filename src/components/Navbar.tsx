@@ -22,7 +22,7 @@ const Navbar = () => {
           <div className="hidden md:flex md:items-center">
             <div className="flex items-center space-x-4">
               <Link to="/" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</Link>
-              <Link to="/products" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Products</Link>
+              <Link to="/products" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Featured Brands</Link>
               <Link to="/locations" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Locations</Link>
               <Link to="/rewards" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Rewards</Link>
               <Link 
@@ -69,7 +69,7 @@ const Navbar = () => {
               className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsOpen(false)}
             >
-              Products
+              Featured Brands
             </Link>
             <Link
               to="/locations"
