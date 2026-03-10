@@ -148,6 +148,28 @@ const locations = [
     coordinates: { lat: 46.9831, lng: -122.9290 },
     images: [
       'https://i.imgur.com/qcoPtKK.png',
+      'https://i.imgur.com/08kqmvN.png',
+      'https://i.imgur.com/Xx75h95.png',
+      'https://i.imgur.com/b9ZluRM.png'
+    ]
+  },
+  {
+    id: 8,
+    name: 'Smoke & Go Lacey Location',
+    address: '5740 Ruddell Rd SE Ste A',
+    city: 'Lacey',
+    state: 'WA',
+    zip: '98503',
+    phone: '360-995-4897',
+    hours: {
+      monFri: '9:00 AM - 8:00 PM',
+      sat: '9:00 AM - 8:00 PM',
+      sun: '10:00 AM - 6:00 PM'
+    },
+    mapUrl: 'https://www.google.com/maps/place/5740+Ruddell+Rd+SE+Ste+A,+Lacey,+WA+98503',
+    coordinates: { lat: 47.0210, lng: -122.7916 },
+    images: [
+      'https://i.imgur.com/OvzA46E.png',
       'https://i.imgur.com/O5tqQLy.png',
       'https://i.imgur.com/W9Rgjoi.png',
       'https://i.imgur.com/kKJpVHZ.png'
