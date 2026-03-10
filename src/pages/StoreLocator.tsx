@@ -92,6 +92,27 @@ const locations = [
     ]
   },
   {
+    id: 6,
+    name: 'Smoke & Go Port Orchard Location',
+    address: '1456 Olney Ave SE STE #102',
+    city: 'Port Orchard',
+    state: 'WA',
+    zip: '98366',
+    phone: '360-443-2628',
+    hours: {
+      monFri: '9:00 AM - 9:00 PM',
+      sat: '9:00 AM - 9:00 PM',
+      sun: '9:00 AM - 9:00 PM'
+    },
+    mapUrl: 'https://www.google.com/maps/place/1456+Olney+Ave+SE+%23102,+Port+Orchard,+WA+98366',
+    coordinates: { lat: 47.5129, lng: -122.6483 },
+    images: [
+      'https://i.imgur.com/HwFSVrk.png',
+      'https://i.imgur.com/OOxD42i.png',
+      'https://i.imgur.com/8eVbUct.png'
+    ]
+  },
+  {
     id: 5,
     name: 'Smoke Town Port Orchard Location',
     address: '3280 SE Lund Ave #4',
@@ -108,6 +129,28 @@ const locations = [
     coordinates: { lat: 47.516769, lng: -122.627983 },
     images: [
       'https://i.imgur.com/YA8dRbR.png'
+    ]
+  },
+  {
+    id: 7,
+    name: 'Smoke & Go Tumwater Location',
+    address: '855 Trosper Rd SW STE #101',
+    city: 'Tumwater',
+    state: 'WA',
+    zip: '98512',
+    phone: '360-350-0718',
+    hours: {
+      monFri: '9:00 AM - 8:00 PM',
+      sat: '9:00 AM - 8:00 PM',
+      sun: '10:00 AM - 6:00 PM'
+    },
+    mapUrl: 'https://www.google.com/maps/place/855+Trosper+Rd+SW+%23101,+Tumwater,+WA+98512',
+    coordinates: { lat: 46.9831, lng: -122.9290 },
+    images: [
+      'https://i.imgur.com/qcoPtKK.png',
+      'https://i.imgur.com/O5tqQLy.png',
+      'https://i.imgur.com/W9Rgjoi.png',
+      'https://i.imgur.com/kKJpVHZ.png'
     ]
   }
 ];
