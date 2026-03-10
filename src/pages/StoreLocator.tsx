@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Loader } from '@googlemaps/js-api-loader';
 
@@ -233,52 +233,46 @@ const ImageGallery = ({ images }: { images: string[] }) => {
 const StoreLocator = () => {
   const mapRef = useRef<HTMLDivElement>(null);
   const googleMapRef = useRef<google.maps.Map | null>(null);
-  const markersRef = useRef<google.maps.Marker[]>([]);
+  const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
 
   useEffect(() => {
     const initMap = async () => {
       const loader = new Loader({
-        apiKey: 'AIzaSyBE91tY5lTTAM0PwHCO6UdIJ4ID8YwvmF0',
+        apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
         version: 'weekly'
       });
 
       try {
-        const google = await loader.load();
-        
+        const { Map } = await loader.importLibrary('maps') as google.maps.MapsLibrary;
+        const { AdvancedMarkerElement, PinElement } = await loader.importLibrary('marker') as google.maps.MarkerLibrary;
+
         if (mapRef.current) {
           const bounds = new google.maps.LatLngBounds();
           locations.forEach(location => {
             bounds.extend(location.coordinates);
           });
 
-          const map = new google.maps.Map(mapRef.current, {
+          const map = new Map(mapRef.current, {
             center: bounds.getCenter(),
             zoom: 10,
-            styles: [
-              {
-                featureType: 'poi',
-                elementType: 'labels',
-                stylers: [{ visibility: 'off' }]
-              }
-            ]
+            mapId: import.meta.env.VITE_GOOGLE_MAPS_MAP_ID,
           });
 
           googleMapRef.current = map;
           map.fitBounds(bounds);
 
           locations.forEach(location => {
-            const marker = new google.maps.Marker({
+            const pin = new PinElement({
+              background: '#9333ea',
+              borderColor: '#ffffff',
+              glyphColor: '#ffffff',
+            });
+
+            const marker = new AdvancedMarkerElement({
               position: location.coordinates,
               map: map,
               title: location.name,
-              icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                scale: 10,
-                fillColor: '#9333ea',
-                fillOpacity: 1,
-                strokeColor: '#ffffff',
-                strokeWeight: 2,
-              }
+              content: pin.element,
             });
 
             const infoWindow = new google.maps.InfoWindow({
@@ -297,7 +291,7 @@ const StoreLocator = () => {
             });
 
             marker.addListener('click', () => {
-              infoWindow.open(map, marker);
+              infoWindow.open({ anchor: marker, map });
             });
 
             markersRef.current.push(marker);
@@ -311,7 +305,7 @@ const StoreLocator = () => {
     initMap();
 
     return () => {
-      markersRef.current.forEach(marker => marker.setMap(null));
+      markersRef.current.forEach(marker => { marker.map = null; });
       markersRef.current = [];
     };
   }, []);
@@ -367,8 +361,14 @@ const StoreLocator = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Hours</h4>
                   <div className="text-gray-600">
-                    <p>Mon-Fri: {location.hours.monFri}</p>
-                    <p>Saturday: {location.hours.sat}</p>
+                    {location.hours.monFri === location.hours.sat ? (
+                      <p>Mon-Sat: {location.hours.monFri}</p>
+                    ) : (
+                      <>
+                        <p>Mon-Fri: {location.hours.monFri}</p>
+                        <p>Saturday: {location.hours.sat}</p>
+                      </>
+                    )}
                     <p>Sunday: {location.hours.sun}</p>
                   </div>
                 </div>

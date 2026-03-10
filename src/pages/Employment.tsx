@@ -1,4 +1,3 @@
-import React from 'react';
 import { Download, Mail } from 'lucide-react';
 
 const Employment = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Phone, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -45,7 +44,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p className="text-gray-300">2024 Smoke & Go. All rights reserved.</p>
+          <p className="text-gray-300">© 2025 Smoke & Go. All rights reserved.</p>
           <p className="text-gray-400 text-sm mt-2">Must be 21 or older to purchase.</p>
         </div>
       </div>
